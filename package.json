@@ -26,7 +26,15 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "paths": ["src"],
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    }
   },
   "browserslist": {
     "production": [
@@ -41,6 +49,8 @@
     ]
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26"
-  }
+    "@types/styled-components": "^5.1.26",
+    "babel-plugin-styled-components": "^2.0.7"
+  },
+  "plugins": ["babel-plugin-styled-components"]
 }

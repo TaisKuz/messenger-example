@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import LayoutMain from './layout/Main';
+import { DataI } from 'App.types';
 
 function App() {
+  const InitData = {} as DataI;
+  const [data, setData] = useState(InitData);
+  const getData = () => {
+    fetch('data.json'
+    ,{
+      headers : {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+       }
+    }
+    )
+    .then(function(response){
+      return response.json();
+    })
+    .then(function(myJson) {
+      setData(myJson);
+    });
+  }
+
+  useEffect(() => {
+    getData()
+  },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <LayoutMain data={data} />
+    </>
   );
 }
 
