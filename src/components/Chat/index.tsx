@@ -1,8 +1,13 @@
+import { FC } from 'react';
 import styled from 'styled-components';
 import UserAvatar from 'components/UserAvatar';
 import { ChatI } from 'App.types';
 
-function Chat(key: (string | null), chat: ChatI) {
+interface ChatProps {
+  chat: ChatI;
+}
+
+const Chat: FC<ChatProps> = ({ chat }) => {
   const {
     img,
     name,
@@ -10,6 +15,7 @@ function Chat(key: (string | null), chat: ChatI) {
     message,
     badge
   } = chat;
+
   return (
     <ChatStyled>
       <BorderTop />

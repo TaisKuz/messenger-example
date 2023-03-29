@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import LeftSide from 'components/LeftSide';
 import { DataI } from 'App.types';
 
-function LayoutMain(data: DataI) {
+interface LayoutMainProps {
+  data: DataI;
+}
+
+const LayoutMain: FC<LayoutMainProps> = ({ data }) => {
   return (
     <LayoutMainWrapper>
       <LeftSide data={data} />

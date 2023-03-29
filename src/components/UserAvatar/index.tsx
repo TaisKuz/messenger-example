@@ -1,11 +1,16 @@
+import { FC } from 'react';
 import styled from 'styled-components';
 
-function UserAvatar(img: string | null) {
-  const withAvatar = !(img === "" || img === undefined);
+interface UserAvatarProps {
+  img?: string;
+}
+
+const UserAvatar: FC<UserAvatarProps> = ({ img }) => {
+  const withAvatar = !(img === "" && img === null);
 
   return (
       <UserAvatarStyled >
-        {withAvatar && <UserImage src={img} alt="user avatar" />}
+        {withAvatar && <UserImage src={img} />}
       </UserAvatarStyled>
   );
 }

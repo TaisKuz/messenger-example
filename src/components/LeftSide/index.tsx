@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import ChatList from 'components/ChatList';
 import { DataI } from 'App.types';
 
-function LeftSide(data: DataI) {
+interface LeftSideProps {
+  data: DataI;
+}
+
+const LeftSide: FC<LeftSideProps> = ({ data }) => {
   const { chats } = data;
   return (
     <LeftSideStyled>

@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 import Chat from 'components/Chat';
 import { ChatI } from 'App.types';
+import { FC } from 'react';
 
-function ChatList(chats: Array<ChatI>) {
+interface ChatListProps {
+  chats: Array<ChatI>;
+}
+
+const ChatList: FC<ChatListProps> = ({ chats }) => {
+  console.log(`chats ${chats}`)
   return (
     <ChatListStyled>
       {
-        chats.map((chat: ChatI) =>
+        chats && chats.map((chat: ChatI) =>
           <Chat key={chat.img} chat={chat} />
         )
       }

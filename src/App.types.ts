@@ -10,9 +10,9 @@ export interface UserI {
 }
 
 export interface ChatI {
-  img: string | null;
+  img?: string;
   name: string;
-  date: Date;
+  date: string;
   message: string;
   badge: number;
 }
