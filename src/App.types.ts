@@ -14,7 +14,8 @@ export interface ChatI {
   name: string;
   date: string;
   message: string;
-  badge: number;
+  messagePrefix?: boolean;
+  badge?: number;
 }
 
 export interface DataI {

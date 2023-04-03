@@ -19,10 +19,12 @@ export const UserAvatarStyled = styled.div`
   width: 47px;
   height: 47px;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   background-color: #EFEFEF;
   border-radius: 50%;
+  align-self: center;
 `;
 
 export const UserImage = styled.img`
